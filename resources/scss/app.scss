@@ -1,11 +1,355 @@
 @import "~bootstrap/scss/bootstrap";
 
-.wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+.header-link {
+    background-color: #0282f9;
+    height: 20px;
 
-    main {
-        flex-grow: 1;
+    .link {
+        text-align: end;
+        line-height: 17px;
+        a {
+            color: white;
+            font-size: 8px;
+            font-weight: bold;
+            padding: 0 1rem;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.container {
+    width: 65%;
+
+    a {
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+}
+
+.header-navbar {
+    height: 75px;
+    margin-bottom: 18px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        width: 8%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .links {
+        .active {
+            color: #0282f9;
+            border-bottom: 4px solid #0282f9;
+        }
+        span {
+            color: #0282f9;
+        }
+        width: 82%;
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            gap: 1.5rem;
+
+            li {
+                font-weight: bold;
+                font-size: 13px;
+            }
+
+            a {
+                color: #555;
+                padding-bottom: 34px;
+            }
+        }
+    }
+
+    .search {
+        width: 10%;
+
+        input {
+            width: 100%;
+            text-align: end;
+            border: none;
+            border-bottom: 2px solid #0282f9;
+            padding: 5px;
+            font-size: 13px;
+        }
+    }
+}
+
+.jumbotron {
+    height: 320px;
+    width: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+.container.relative {
+    position: relative;
+    div {
+        position: absolute;
+        padding: 0.3rem 0.8rem;
+        font-size: 23px;
+        font-weight: bold;
+        background-color: #0282f9;
+        color: white;
+        top: -25px;
+    }
+}
+
+.blue-bar {
+    background-color: #0282f9;
+    height: 60px;
+    position: relative;
+    .container.thumb {
+        width: 55%;
+        .thumb {
+            width: 20%;
+            position: absolute;
+            position: relative;
+            top: -200px;
+            img {
+                width: 100%;
+                aspect-ratio: 2/3;
+            }
+            .top {
+                position: absolute;
+                background-color: #6cb8ff;
+                color: white;
+                font-size: 10px;
+                padding: 0 5px;
+                top: 0;
+            }
+            .bottom {
+                width: 100%;
+                background-color: #6cb8ff;
+                color: white;
+                font-size: 10px;
+                position: absolute;
+                text-align: center;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+.container.desc {
+    width: 55%;
+    .desc-box {
+        width: 70%;
+        padding-top: 13px;
+        .price-box {
+            background-color: #55ba59;
+            border-bottom: 1px solid #777;
+            font-size: 13px;
+            font-weight: bold;
+            div {
+                color: rgba(255, 255, 255, 0.7);
+                span {
+                    color: white;
+                }
+            }
+            .price {
+                width: 70%;
+            }
+            .check {
+                width: 30%;
+                border-left: 1px solid #777;
+                span {
+                    font-size: 8px;
+                }
+            }
+        }
+        .title-comic {
+            color: #093257;
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .description {
+            font-size: 13px;
+            color: #555;
+        }
+    }
+    .adv-box {
+        width: 30%;
+        p {
+            margin: 0;
+            font-size: 13px;
+            font-weight: bold;
+            color: #555;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.comics {
+    background-color: #1c1c1c;
+    min-height: 200px;
+
+    .card {
+        background-color: transparent;
+        border: none;
+        a {
+            color: white;
+
+            img {
+                width: 100%;
+                aspect-ratio: 1;
+            }
+            p {
+                font-size: 12px;
+                padding-top: 15px;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+    .btn {
+        border-radius: 0;
+        padding: 5px 40px;
+        font-size: 11px;
+        font-weight: bold;
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+.info-comic-section {
+    border-top: 1px solid #d8d8d8;
+    background-color: #f6f6f6;
+    color: #093257;
+    .container {
+        width: 55%;
+        padding: 2rem 0 4rem 0;
+        .talent,
+        .specs {
+            width: 50%;
+            font-size: 10px;
+            h2 {
+                font-size: 15px;
+                font-weight: bold;
+            }
+        }
+        hr {
+            margin: 5px 0;
+            color: #555;
+        }
+    }
+}
+
+.link-info-comic {
+    background-color: #f6f6f6;
+    border-top: 1px solid #d8d8d8;
+    .container {
+        width: 55%;
+        border-right: 1px solid #d8d8d8;
+        .link {
+            border-left: 1px solid #d8d8d8;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 10px;
+            width: calc(100% / 4);
+            color: #888;
+            .title {
+                width: 88%;
+            }
+            .logo {
+                width: 12%;
+                cursor: pointer;
+                &:hover {
+                    opacity: 0.8;
+                }
+                img {
+                    width: 100%;
+                    filter: brightness(70%);
+                }
+            }
+        }
+    }
+}
+
+.footer-bg {
+    height: 320px;
+    width: 100%;
+    background-image: url(../assets/images/footer-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .footer-info {
+        padding: 2rem 0;
+        width: 50%;
+        ul {
+            padding: 0;
+        }
+        h5 {
+            color: white;
+            font-weight: bold;
+            font-size: 17px;
+        }
+        p {
+            color: #888;
+            font-size: 10px;
+            margin: 0;
+            &:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+        }
+    }
+    .footer-logo {
+        width: 50%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+    }
+}
+
+.footer-social {
+    height: 75px;
+    background-color: #303030;
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .btn {
+            color: white;
+            border-radius: 0;
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .follow {
+            color: #0282f9;
+            font-weight: bold;
+        }
+        a:hover {
+            opacity: 0.8;
+        }
     }
 }

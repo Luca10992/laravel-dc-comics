@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-  return view('home');
-})->name('home');
+Route::get("/error", [ComicController::class,"error"])->name("error");
+Route::resources(
+  [
+    'comics' => ComicController::class,
+    'comics.create' => ComicController::class,
+    'comics.{comics}' => ComicController::class,
+  ]);
