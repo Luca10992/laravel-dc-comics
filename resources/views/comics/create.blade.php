@@ -10,15 +10,15 @@
         <div class="row g-4">
             <div class="col-4">
                 <label for="title">Titolo Fumetto</label>
-                <input class="form-control mb-2" type="text" name="title">
+                <input class="form-control mb-2" type="text" name="title" required>
             </div>
             <div class="col-4">
                 <label for="series">Serie Fumetto</label>
-                <input class="form-control" type="text" name="series">
+                <input class="form-control" type="text" name="series" required>
             </div>
             <div class="col-4">
                 <label for="type">Tipologia</label>
-                <select class="form-select" name="type" id="type">
+                <select class="form-select" name="type" id="type" required>
                     <option default="type">Tipologia</option>
                     <option value="comic book">Comic book</option>
                     <option value="graphic novel">Graphic novel</option>
@@ -33,15 +33,15 @@
             </div>
             <div class="col-4">
                 <label for="price">Prezzo</label>
-                <input class="form-control" type="number" step="0.01" name="price">
+                <input class="form-control" type="number" step="0.01" name="price" required>
             </div>
             <div class="col-4">
                 <label for="sale_date">Data di pubblicazione</label>
-                <input class="form-control" type="text" name="sale_date">
+                <input class="form-control" type="text" name="sale_date" required>
             </div>
             <div class="col-4">
                 <label for="thumb">Immagine di copertina</label><br>
-                <input class="form-control" type="text" name="thumb">
+                <input class="form-control" type="text" name="thumb" required>
             </div>
         </div>
         <div class="text-center mt-3">
