@@ -5,7 +5,7 @@
 @section('main-content')
 <div class="container py-5">
     <h2 class="pb-3">Aggiungi Fumetto</h2>
-    <form action="{{ 'comics.store' }}" method="post">
+    <form action="{{ route('comics.store') }}" method="POST">
         @csrf
         <div class="row g-4">
             <div class="col-4">
@@ -33,7 +33,7 @@
             </div>
             <div class="col-4">
                 <label for="price">Prezzo</label>
-                <input class="form-control" type="text" name="price">
+                <input class="form-control" type="number" step="0.01" name="price">
             </div>
             <div class="col-4">
                 <label for="sale_date">Data di pubblicazione</label>
@@ -41,11 +41,11 @@
             </div>
             <div class="col-4">
                 <label for="thumb">Immagine di copertina</label><br>
-                <input class="form-control" type="file" name="thumb">
+                <input class="form-control" type="text" name="thumb">
             </div>
         </div>
         <div class="text-center mt-3">
-            <input type="submit" value="Save" class="btn btn-primary px-5 me-2">
+            <button type="submit" class="btn btn-primary px-5 me-2">Save</button>
             <input type="reset" value="Reset" class="btn btn-warning px-5 ms-2">
         </div>
     </form>

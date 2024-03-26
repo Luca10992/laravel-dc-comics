@@ -3,11 +3,19 @@
 @section('main-content')
 
 <div class="blue-bar">
-    <div class="container thumb">
+    <div class="container thumb d-flex justify-content-between align-items-center">
         <div class="thumb">
             <img src="{{ $comic->thumb }}" alt="">
             <div class="top">{{ strtoupper($comic->type) }}</div>
             <div class="bottom">VIEW GALLERY</div>
+        </div>
+        <div class="d-flex gap-3">
+            <a href="{{ route('comics.edit', $comic) }}">
+                <button class="btn btn-success px-4">Edit</button>
+            </a>
+            <button type="button" class="btn btn-danger px-4" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $comic->id }}">
+                Delete
+              </button>
         </div>
     </div>
 </div>
@@ -16,7 +24,7 @@
         <h2 class="title-comic">{{ $comic->title }}</h2>
         <div class="price-box d-flex">
             <div class="price d-flex justify-content-between p-2">
-                <div>U.S. Price: <span>{{ $comic->price }}</span></div>
+                <div>U.S. Price: <span>{{ $comic->price }} $</span></div>
                 <div>AVAILABLE</div>
             </div>
             <div class="check ps-2 text-light py-2"><p class="m-0">Check Availability <span>▼</span></p></div>
@@ -54,7 +62,7 @@
             <hr>
             <div class="d-flex">
                 <p class="fw-bold w-25 m-0">U.S. Price:</p>
-                <p class="w-75 m-0">{{ $comic->price }}</p>
+                <p class="w-75 m-0">{{ $comic->price }} $</p>
             </div>
             <hr>
             <div class="d-flex">
@@ -86,4 +94,35 @@
     </div>
 </div>
 
+@endsection
+
+@section('modal')
+
+@foreach ($comics as $comic)
+
+  <div class="modal fade" id="deleteModal{{ $comic->id }}" tabindex="-1" aria-labelledby="deleteModal{{ $comic->id }}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="deleteModalLabel">Eliminare {{ $comic->title }}?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Così facendo il file verrà eliminato in maniera definitiva. Procedere?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+@endforeach
+    
 @endsection

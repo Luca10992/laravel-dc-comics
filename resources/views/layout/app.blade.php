@@ -19,6 +19,7 @@
 
     @include('partial.footer')
 
+    @yield('modal')
 </body>
 
 </html>

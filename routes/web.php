@@ -14,9 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/error", [ComicController::class,"error"])->name("error");
-Route::resources(
-  [
-    'comics' => ComicController::class,
-    'comics.create' => ComicController::class,
-    'comics.{comics}' => ComicController::class,
-  ]);
+Route::resource("comics", ComicController::class);

@@ -118,15 +118,15 @@
 
 .blue-bar {
     background-color: #0282f9;
-    height: 60px;
-    position: relative;
     .container.thumb {
+        position: relative;
         width: 55%;
+        height: 60px;
         .thumb {
             width: 20%;
             position: absolute;
             position: relative;
-            top: -200px;
+            top: -115px;
             img {
                 width: 100%;
                 aspect-ratio: 2/3;
